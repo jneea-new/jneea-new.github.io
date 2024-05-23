@@ -16,14 +16,20 @@
     {% include head-custom.html %}
   </head>
   <body>
-
       <header><!--MFH:22.5.24: removed page.title at front-->
         <h1>{{ site.title | default: page.title | default: site.github.repository_name }}</h1>
         <!--p>{ { page.description | default: site.description | default: site.github.project_tagline }}</p-->
-        <table border=0 width='100%' ><tr><td>[ISSN 2161-3680](https://portal.issn.org/resource/ISSN/2161-3680)
+        <p><table border=0 width='100%' ><tr>
+          <td><a href="https://portal.issn.org/resource/ISSN/2161-3680">ISSN 2161-3680</a>
           <td align='right'>
-            [Home](/) [Call for papers](/call) [Contents](/contents) [Editorial board](/editors) [Subscribe](/subscribe) [For authors](/authors) [About](/about)
-        </table>
+            &nbsp; <a href='/'>Home</a>
+            &nbsp; <a href='/call'>Call for papers</a>
+            &nbsp; <a href='/contents'>Contents</a>
+            &nbsp; <a href='/editors'>Editorial board</a>
+            &nbsp; <a href='/subscribe'>Subscribe</a>
+            &nbsp; <a href='/authors'>For authors</a>
+            &nbsp; <a href='/about'>About</a>
+        </table></p>
       </header>
 
       <div id="banner">

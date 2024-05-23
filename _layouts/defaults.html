@@ -17,9 +17,13 @@
   </head>
   <body>
 
-      <header>
-        <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-        <p>{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+      <header><!--MFH: removed page.title at front-->
+        <h1>{{ site.title | default: page.title | default: site.github.repository_name }}</h1>
+        <!--p>{ { page.description | default: site.description | default: site.github.project_tagline }}</p-->
+        <table border=0 width='100%' ><tr><td>[ISSN 2161-3680](https://portal.issn.org/resource/ISSN/2161-3680)
+          <td align='right'>
+            [Home](/) [Call for papers](/call) [Contents](/contents) [Editorial board](/editors) [Subscribe](/subscribe) [For authors](/authors) [About](/about)
+        </table>
       </header>
 
       <div id="banner">

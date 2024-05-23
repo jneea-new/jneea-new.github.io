@@ -12,14 +12,27 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     {% include head-custom.html %}
+    <style><!--/* { % include head-custom.html % } */
+      body {margin:0;}
+    header {font-family: Helvetica; color:white; background: #18b; 
+            background-image: linear-gradient(to bottom, #17a 0%, #29d 100%); }
+    /*#nav-top div: text-align:right;  margin: 0; border: 1px solid red; */
+    #nav-top ul { display: inline; float:right; margin-top:0; }
+        /* list-style:none; display: inline; table border=0 width='100%' */
+    #nav-top li { display:inline-block; margin-right: 30px;  }/* float:left; display:block; display: inline-block*/
+  	header a { text-decoration: none; color: white;} /* otherwise links are blue */
+    header h1 { padding-top:16px; clear:right; font-family: "Copse" "Helvetica Neue" Helvetica Arial ; 
+               text-shadow: 1px 3px #248; }
+  	#issn    { margin:12px; font-style: oblique; font-size:large; text-decoration: none;}
+    footer { font-size: small; text-align: center; }
+	--></style>
   </head>
   <body>
       <header>
         <!--MFH:22.5.24: moved nav.menu to top-->
-        <div style="text-align:right; display:inline; display-list: outside">
-          <ul style="display:inline"><!--table border=0 width='100%' -->
+        <div id='nav-top'>
+          <ul>
             <li><a href='/'>Home</a>
             <li><a href='/call'>Call for papers</a>
             <li><a href='/contents'>Contents</a>
@@ -29,30 +42,31 @@
             <li><a href='/about'>About</a>
           </ul>
         </div>
-        <h1>
         <!--MFH:22.5.24: added logo here-->
-          <span id="logo" style="background: url(/assets/images/logo.png)"></span>
-        <!--MFH:22.5.24: removed page.title at front-->
-        {{ site.title | default: page.title | default: site.github.repository_name }}</h1>
-        <!--p>{ { page.description | default: site.description | default: site.github.project_tagline }}</p-->
+        <img id="logo" src="./logo.png" style="float:left; margin: 16px "/>
+		
+        <h1>Journal of Nonlinear Evolution Equations and Applications</h1>
+		    <div style="clear:both"></div>
       </header>
-
-      <div id="banner">
+    
+      <!--div id="banner">
         <a href="https://portal.issn.org/resource/ISSN/2161-3680">ISSN 2161-3680</a>
       </div><!-- end banner -->
 
     <div class="wrapper">
+        <a id="issn" href="https://portal.issn.org/resource/ISSN/2161-3680">ISSN 2161-3680</a></div>
       <nav>
         <ul></ul>
       </nav>
-      <section>
+      <section><!-- body of the page -->
          {{ content }}
 
       </section>
       <footer>
-        <p><small>&copy; 2011 - 2024 by <a href='/'>JNEEA.com</a>
+        <!--MFH:22.5.24: our footer-->
+        <p><&copy; 2011 - 2024 by <a href='/'>JNEEA.com</a>
           — Webmaster: <a href='/contact'>M. F. Hasler</a>
-        </small></p>
+        </p>
       </footer>
     </div>
   </body>

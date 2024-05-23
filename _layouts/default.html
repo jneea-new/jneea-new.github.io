@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
@@ -19,35 +18,27 @@
   <body>
       <header>
         <!--MFH:22.5.24: moved nav.menu to top-->
-        <ul style="display:inline; text-align:right"><!--table border=0 width='100%' -->
-          <li><a href='/'>Home</a>
-          <li><a href='/call'>Call for papers</a>
-          <li><a href='/contents'>Contents</a>
-          <li><a href='/editors'>Editorial board</a>
-          <li><a href='/subscribe'>Subscribe</a>
-          <li><a href='/authors'>For authors</a>
-          <li><a href='/about'>About</a>
-        </ul>
-        <!--MFH:22.5.24: removed page.title at front-->
+        <div style="text-align:right; display:inline; display-list: outside">
+          <ul style="display:inline"><!--table border=0 width='100%' -->
+            <li><a href='/'>Home</a>
+            <li><a href='/call'>Call for papers</a>
+            <li><a href='/contents'>Contents</a>
+            <li><a href='/editors'>Editorial board</a>
+            <li><a href='/subscribe'>Subscribe</a>
+            <li><a href='/authors'>For authors</a>
+            <li><a href='/about'>About</a>
+          </ul>
+        </div>
         <h1>
+        <!--MFH:22.5.24: added logo here-->
           <span id="logo" style="background: url(/assets/images/logo.png)"></span>
+        <!--MFH:22.5.24: removed page.title at front-->
         {{ site.title | default: page.title | default: site.github.repository_name }}</h1>
         <!--p>{ { page.description | default: site.description | default: site.github.project_tagline }}</p-->
       </header>
 
       <div id="banner">
         <a href="https://portal.issn.org/resource/ISSN/2161-3680">ISSN 2161-3680</a>
-         
-        <a href="{{ site.github.repository_url }}" class="button fork"><strong>View On GitHub</strong></a>
-        {% if site.show_downloads %}
-          <div class="downloads">
-            <span>Downloads:</span>
-            <ul>
-              <li><a href="{{ site.github.zip_url }}" class="button">ZIP</a></li>
-              <li><a href="{{ site.github.tar_url }}" class="button">TAR</a></li>
-            </ul>
-          </div>
-        {% endif %}
       </div><!-- end banner -->
 
     <div class="wrapper">
@@ -55,14 +46,13 @@
         <ul></ul>
       </nav>
       <section>
-        {{ content }}
+         {{ content }}
 
       </section>
       <footer>
-        {% if site.github.is_project_page %}
-          <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
+        <p><small>&copy; 2011 - 2024 by <a href='/'>JNEEA.com</a>
+          — Webmaster: <a href='/contact'>M. F. Hasler</a>
+        </small></p>
       </footer>
     </div>
   </body>

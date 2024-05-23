@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {% seo %}
@@ -16,25 +17,27 @@
     {% include head-custom.html %}
   </head>
   <body>
-      <header><!--MFH:22.5.24: removed page.title at front-->
-        <h1>{{ site.title | default: page.title | default: site.github.repository_name }}</h1>
+      <header>
+        <!--MFH:22.5.24: moved nav.menu to top-->
+        <ul style="display:inline; text-align:right"><!--table border=0 width='100%' -->
+          <li><a href='/'>Home</a>
+          <li><a href='/call'>Call for papers</a>
+          <li><a href='/contents'>Contents</a>
+          <li><a href='/editors'>Editorial board</a>
+          <li><a href='/subscribe'>Subscribe</a>
+          <li><a href='/authors'>For authors</a>
+          <li><a href='/about'>About</a>
+        </ul>
+        <!--MFH:22.5.24: removed page.title at front-->
+        <h1>
+          <span id="logo" style="background: url(/assets/images/logo.png)"></span>
+        {{ site.title | default: page.title | default: site.github.repository_name }}</h1>
         <!--p>{ { page.description | default: site.description | default: site.github.project_tagline }}</p-->
-        <p><table border=0 width='100%' ><tr>
-          <td><a href="https://portal.issn.org/resource/ISSN/2161-3680">ISSN 2161-3680</a>
-          <td align='right'>
-            &nbsp; <a href='/'>Home</a>
-            &nbsp; <a href='/call'>Call for papers</a>
-            &nbsp; <a href='/contents'>Contents</a>
-            &nbsp; <a href='/editors'>Editorial board</a>
-            &nbsp; <a href='/subscribe'>Subscribe</a>
-            &nbsp; <a href='/authors'>For authors</a>
-            &nbsp; <a href='/about'>About</a>
-        </table></p>
       </header>
 
       <div id="banner">
-        <span id="logo"></span>
-
+        <a href="https://portal.issn.org/resource/ISSN/2161-3680">ISSN 2161-3680</a>
+         
         <a href="{{ site.github.repository_url }}" class="button fork"><strong>View On GitHub</strong></a>
         {% if site.show_downloads %}
           <div class="downloads">

@@ -1,8 +1,9 @@
 ---
 layout: page
-title: "Call for papers"
+title: "Call for papers" #this is what shows up in the menu. for the actual page title, use #title below
 permalink: /call
 ---
+
 We kindly invite colleagues working on subjects related to evolution equations to submit 
 a paper to our **_Journal of Nonlinear Evolution Equations and Applications (JNEEA)_**. 
 Your paper will contribute to the success of JNEEA.

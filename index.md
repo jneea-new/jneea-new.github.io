@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Welcome to the Journal of Nonlinear Evolution Equations and Applications
 
 ## Aims & Scope

@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Contents
-permalink: /contents
+layout: page       # also 'default' doesn't work here
+title: Contents    # html <title> and text for the link in nav menu
+permalink: /contents    # without this
 ---
 # Contents of JNEEA:
 * The current volume is [2024](/2024)

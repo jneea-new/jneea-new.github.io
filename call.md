@@ -1,7 +1,7 @@
 ---
-layout: default
-title: "Call for papers" #this is what shows up in the menu. for the actual page title, use #title below
-permalink: /call
+layout: page  # also tried 'default', but doesn't change anything
+title: "Call for papers" # that's what shows up in the menus. For the actual page title, use #title below
+permalink: /call    # without this, the file won't display
 ---
 
 We kindly invite colleagues working on subjects related to evolution equations to submit 

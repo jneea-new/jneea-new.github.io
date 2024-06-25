@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Contents
+permalink: /contents
 ---
 # Contents of JNEEA:
 * The current volume is [2024](/2024)

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Call for papers" #this is what shows up in the menu. for the actual page title, use #title below
 permalink: /call
 ---

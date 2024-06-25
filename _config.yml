@@ -1,6 +1,8 @@
+---
 theme: jekyll-theme-leap-day
-title: Journal of Nonlinear Evolution Equations and Applications
+title: &JNEEA Journal of Nonlinear Evolution Equations and Applications
 description:
-  The Journal of Nonlinear Evolution Equations and Applications 
+  The *JNEEA Journal of Nonlinear Evolution Equations and Applications 
   is an open access  electronic mathematical journal dedicated to rapid dissemination of high quality papers 
   in all areas and sub-areas of evolution equations and their applications to scientific and engineering problems.
+---

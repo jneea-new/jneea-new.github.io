@@ -5,12 +5,35 @@ we start a new attempt based on Hugo.
 
 Roadmap:
 
-[X] Step 1: Front Matter Schema & Data Conventions (Finalized)
-[ ] Step 2: Individual Paper Template (`layouts/_default/single.html`)
-[ ] Step 3: Volume Index Template (`layouts/_default/list.html`)
-[ ] Step 4: Base Layout & CSS Integration (`layouts/_default/baseof.html`)
-[ ] Step 5: GitHub Repository & Actions Workflow Setup
+    [X] Step 1: Front Matter Schema & Data Conventions (Finalized)
+    [ ] Step 2: Individual Paper Template (`layouts/_default/single.html`)
+    [ ] Step 3: Volume Index Template (`layouts/_default/list.html`)
+    [ ] Step 4: Base Layout & CSS Integration (`layouts/_default/baseof.html`)
+    [ ] Step 5: GitHub Repository & Actions Workflow Setup
 
+The directory layout is a follows:
+
+    jneea-new.github.io/
+    ├── layouts/
+    │   └── _default/
+    │       ├── baseof.html
+    │       ├── single.html
+    │       └── list.html
+    ├── static/
+    │   └── css/
+    │       └── style.css
+    └── content/
+        └── volumes/
+            ├── 2011/
+            |   ├── 2011-1.md
+            |   ├── ...
+            |   └── 2011-9.md
+            ├── .../        
+            └── 2026/
+                ├── 2011-1.md
+                ├── ...
+                └── 2011-9.md
+    
 ## Step 1 : JNEEA Content Guidelines & Front Matter Schema
 
 Contents of the journal are organized in volumes YYYY which have "issues" or "numbers" n = 1, 2, 3...
@@ -26,7 +49,7 @@ Keys *should* be in lowercase, but can and often will be capitalized (e.g. Autho
 We can/will still query them as .Params.authors, .Params.received, ...
 
 ```yaml
-MS-Number: String "JNEEA-YYMMDDn" or number YYMMDDn, where 20YY-MM-DD is the submission (= received) date,
+MS-Number (alias MS): String "JNEEA-YYMMDDn" or number YYMMDDn, where 20YY-MM-DD is the submission (= received) date,
   and n = 1, 2, 3... disambiguates multiple submissions received the same day.
 Title: String. Full paper title. Normal capitalization: Capitals only for the first word and names. 
       Can use minimal HTML or Unicode if necessary for math.
@@ -44,6 +67,7 @@ Received: Date (YYYY-MM-DD) or String.
 Revised: Date (YYYY-MM-DD), List of Dates/Strings, or String.
 Accepted: Date (YYYY-MM-DD) or custom descriptive String (e.g., "conditionally `<DATE>`, final version `<DATE>`").
 Published: Date (YYYY-MM-DD) or String.
+Commby: String = Name of "Corresponding Editor"
 Volume: Integer 20YY with YY = 00..99
 Number: Integer N = 1, 2, 3...
 Pages: String, e.g., "1-18" (can be entered without quotes: 1-18)

@@ -1,7 +1,12 @@
 {{ define "main" }}
 <div class="volume-index">
-
-  <h2>Journal of Nonlinear Evolution Equations and Applications, Volume {{ .Title | default .Params.volume }}</h2>
+	<h2>
+    {{ if .IsHome }}
+      Welcome to the Journal of Nonlinear Evolution Equations and Applications!
+    {{ else }}
+      Journal of Nonlinear Evolution Equations and Applications, Volume {{ .Params.volume | default .Title }}
+    {{ end }}
+  </h2>
 
   {{ with .Content }}
     <div class="volume-intro">{{ . }}</div>

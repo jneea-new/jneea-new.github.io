@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="volume-index">
+
+  <h2>Journal of Nonlinear Evolution Equations and Applications, Volume {{ .Title | default .Params.volume }}</h2>
+
+  {{ with .Content }}
+    <div class="volume-intro">{{ . }}</div>
+  {{ end }}
+
+  <ul class="toc-list">
+    {{ range .Pages.ByParam "number" }}
+      <li class="toc-item" style="margin-bottom: 12px;">
+        {{/* Authors */}}
+        {{ $authors := .Params.author | default .Params.authors }}
+        {{ if reflect.IsSlice $authors }}
+          {{ $names := slice }}
+          {{ range $item := $authors }}
+            {{ range $name, $val := $item }}
+              {{ $names = $names | append $name }}
+            {{ end }}
+          {{ end }}
+          <span class="toc-authors"><strong>{{ delimit $names ", " " and " }}</strong></span>:
+        {{ else if $authors }}
+          <span class="toc-authors"><strong>{{ $authors }}</strong></span>:
+        {{ end }}
+
+        {{/* Title, Citation, and Abstract Link */}}
+        <a href="{{ .RelPermalink }}" class="toc-abstract-link">
+          <span class="toc-paper-title">{{ .Title }}</span> :
+          <span class="toc-citation">
+            <em>J. Nonl. Evol. Equ. Appl.</em> {{ .Params.volume }} ({{ .Params.number | default .Params.issue }}) ({{ .Params.published_year | default .Params.volume }}) pp. {{ .Params.pages }}:
+          </span>
+          View abstract
+        </a>
+
+        {{/* Download PDF Link */}}
+        {{ $pdf := .Params.pdf | default .Params.file | default .Params.filename }}
+        {{ if $pdf }}
+          {{ $pdfPath := cond (in $pdf "/") $pdf (printf "papers/%v/%s" .Params.volume $pdf) }}
+          - <a href="{{ $pdfPath | relURL }}" target="_blank" rel="noopener">Download full text [PDF{{ with .Params.filesize }}, {{ . }}{{ end }}]</a>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+
+</div>
+{{ end }}

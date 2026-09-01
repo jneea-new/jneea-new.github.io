@@ -1,0 +1,16 @@
+# Hugo config file
+#baseURL = 'https://jneea.com/'
+# until our domain jneea.com is "connected" to github. 
+baseURL = 'https://jneea-new.github.io/'
+title = 'Journal of Nonlinear Evolution Equations and Applications'
+
+languageCode = 'en-us'
+
+[params]
+  description = '''
+The Journal of Nonlinear Evolution Equations and Applications 
+is an open access electronic mathematical journal 
+dedicated to rapid dissemination of high quality papers 
+in all areas and sub-areas of evolution equations 
+and their applications to scientific and engineering problems.
+'''

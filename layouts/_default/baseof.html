@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    {{/* External CSS & Scripts from original default.html */}}
+    <link rel="stylesheet" href="{{ "assets/css/style.css" | relURL }}">
+    <!--script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script-->
+    <script src="{{ "assets/js/main.js" | relURL }}"></script>
+  </head>
+  <body>
+    <header>
+      <div id="nav-top">
+        <ul>
+          <li><a href="{{ "" | relURL }}">Home</a></li>
+          <li><a href="{{ "call" | relURL }}">Call for papers</a></li>
+          <li><a href="{{ "contents" | relURL }}">Contents</a></li>
+          <li><a href="{{ "editors" | relURL }}">Editorial board</a></li>
+          <li><a href="{{ "subscribe" | relURL }}">Subscribe</a></li>
+          <li><a href="{{ "authors" | relURL }}">For authors</a></li>
+          <li><a href="{{ "about" | relURL }}">About</a></li>
+        </ul>
+      </div>
+
+      <img id="logo" src="{{ "logo.png" | relURL }}" style="float: left; margin: 16px;" alt="JNEEA Logo" />
+      <h1>Journal of Nonlinear Evolution Equations and Applications</h1>
+      <div style="clear: both;"></div>
+    </header>
+
+    <!-- Page Wrapper -->
+    <div class="wrapper">
+      <a id="issn" href="https://portal.issn.org/resource/ISSN/2161-3680" target="_blank" rel="noopener">ISSN 2161-3680</a>
+      
+      <!-- Sidebar Navigation -->
+      <nav>
+        <ul></ul>
+      </nav>
+
+      <!-- Main Content Block -->
+      <section>
+        {{ block "main" . }}
+          {{ .Content }}
+        {{ end }}
+      </section>
+
+      <footer>
+        <p>&copy; 2011 - {{ now.Format "2006" }} by <a href="{{ "" | relURL }}">JNEEA.com</a> — Webmaster: <a href="{{ "contact" | relURL }}">M. F. Hasler</a></p>
+      </footer>
+    </div>
+
+  </body>
+</html>

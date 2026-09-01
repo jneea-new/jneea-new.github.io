@@ -1,0 +1,120 @@
+{{ define "main" }}
+<article class="paper-page">
+
+  {{/* Citation Header Line */}}
+  <h3 class="citation-header">
+    <em>J. Nonl. Evol. Equ. Appl.</em> {{ .Params.volume }} ({{ .Params.number | default .Params.issue }}), pp. {{ .Params.pages }}{{ with .Params.published }}, published on {{ . }}{{ end }}:
+  </h3>
+
+  {{/* Title */}}
+  <h1 class="paper-title">{{ .Title }}</h1>
+
+  {{/* Authors & Affiliations */}}
+  {{ $authors := .Params.author | default .Params.authors }}
+  {{ $addresses := .Params.address | default .Params.addresses | default .Params.affiliation | default .Params.affiliations }}
+
+  <div class="paper-authors-block">
+    <h2 class="author-names-line">
+      {{ if reflect.IsSlice $authors }}
+        {{ range $index, $item := $authors }}
+          {{ if $index }} and {{ end }}
+          {{ range $name, $aff := $item }}
+            <span class="author-name">{{ $name }}</span>
+            {{ if reflect.IsSlice $aff }}
+              <sup>{{ delimit $aff "," }}</sup>
+            {{ else if $aff }}
+              <sup>{{ $aff }}</sup>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ else if $authors }}
+        {{ $authorList := split $authors " and " }}
+        {{ delimit $authorList ", " " and " }}
+      {{ end }}
+    </h2>
+
+    {{ if $addresses }}
+      <div class="affiliations-block">
+        {{ range $id, $addr := $addresses }}
+          <p class="affiliation-line"><sup>{{ $id }}</sup> {{ $addr }}</p>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+
+  {{/* Editorial Dates & Commby */}}
+  <div class="paper-editorial-info">
+    {{ if .Params.received }}
+      <p class="history-line">
+        Received on {{ .Params.received }}{{ with .Params.revised }}, revised on {{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}{{ end }}
+      </p>
+    {{ end }}
+    {{ if .Params.accepted }}
+      <p class="history-line">Accepted {{ .Params.accepted }}</p>
+    {{ end }}
+    {{ $commby := .Params.commby | default .Params.communicated_by }}
+    {{ if $commby }}
+      <p class="communicated-line">Communicated by {{ $commby }}</p>
+    {{ end }}
+  </div>
+
+  {{/* Table Layout: Abstract, Keywords, MSC */}}
+  <table class="paper-meta-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <tbody>
+      {{/* Abstract Row */}}
+      <tr>
+        <td colspan="2" style="padding-bottom: 12px; vertical-align: top;">
+          <strong>Abstract.</strong> {{ .Content }}
+        </td>
+      </tr>
+
+      {{/* Keywords Row */}}
+      {{ if .Params.keywords }}
+        <tr>
+          <td style="vertical-align: top; white-space: nowrap; padding-right: 8px; padding-bottom: 6px;">
+            <strong>Keywords:</strong>
+          </td>
+          <td style="vertical-align: top; padding-bottom: 6px;">
+            {{ if reflect.IsSlice .Params.keywords }}
+              {{ delimit .Params.keywords ", " }}.
+            {{ else }}
+              {{ .Params.keywords }}.
+            {{ end }}
+          </td>
+        </tr>
+      {{ end }}
+
+      {{/* MSC Row */}}
+      {{ if .Params.msc }}
+        <tr>
+          <td style="vertical-align: top; white-space: nowrap; padding-right: 8px;">
+            <strong>2010 Mathematics Subject Classification:</strong>
+          </td>
+          <td style="vertical-align: top;">
+            {{ if reflect.IsSlice .Params.msc }}
+              {{ delimit .Params.msc "; " }}.
+            {{ else }}
+              {{ .Params.msc }}.
+            {{ end }}
+          </td>
+        </tr>
+      {{ end }}
+    </tbody>
+  </table>
+
+  {{/* PDF Download Link */}}
+  {{ $pdf := .Params.pdf | default .Params.file | default .Params.filename }}
+  {{ if $pdf }}
+    {{ $pdfPath := cond (in $pdf "/") $pdf (printf "papers/%v/%s" .Params.volume $pdf) }}
+    <div class="paper-download" style="margin-top: 20px;">
+      <p>
+        <strong>Download Full Text:</strong> 
+        <a href="{{ $pdfPath | relURL }}" target="_blank" rel="noopener">
+          {{ path.Base $pdf }}{{ with .Params.filesize }} [{{ . }}]{{ end }}
+        </a>
+      </p>
+    </div>
+  {{ end }}
+
+</article>
+{{ end }}

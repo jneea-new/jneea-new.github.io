@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Journal of Nonlinear Evolution Equations and Applications</title>
-		<link>http://localhost:1313/</link>
-		<description>Recent content on Journal of Nonlinear Evolution Equations and Applications</description>
+		<title>2026 on Journal of Nonlinear Evolution Equations and Applications</title>
+		<link>http://localhost:1313/2026/</link>
+		<description>Recent content in 2026 on Journal of Nonlinear Evolution Equations and Applications</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
 		
 		
 		
 		
-			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Call for papers</title>
-				<link>http://localhost:1313/call/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/call/</guid>
-				<description>&lt;p&gt;We kindly invite colleagues working on subjects related to evolution equations to submit&#xA;a paper to our &lt;strong&gt;&lt;em&gt;Journal of Nonlinear Evolution Equations and Applications (JNEEA)&lt;/em&gt;&lt;/strong&gt;.&#xA;Your paper will contribute to the success of JNEEA.&lt;/p&gt;&#xA;&lt;p&gt;If you accept our invitation, please prepare your manuscript according to the &lt;a href=&#34;http://localhost:1313/authors&#34;&gt;instructions for authors&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Papers submitted to the journal are refereed within 2-3 months.&#xA;They undergo initial screening by Editors and anonymous refereeing by at least two independent experts.&#xA;Upon acceptance they are published in less than 3 months.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Contents</title>
-				<link>http://localhost:1313/content-old/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/content-old/</guid>
-				<description>&lt;h1 id=&#34;contents-of-jneea&#34;&gt;Contents of JNEEA:&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The current volume is &lt;a href=&#34;http://localhost:1313/2024&#34;&gt;2024&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Submissions accepted for publication are listed at &lt;a href=&#34;http://localhost:1313/accepted&#34;&gt;accepted&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;See &lt;a href=&#34;http://localhost:1313/2023&#34;&gt;2023&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/2022&#34;&gt;2022&lt;/a&gt;, etc. for earlier volumes&lt;!-- raw HTML omitted --&gt;&#xA;(For the full list, see the navigation bar.)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-			</item>
+			<atom:link href="http://localhost:1313/2026/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>The dynamics of Helicobacter pylori-associated stomach cancer under Ψ–Hilfer fractional derivative</title>
 				<link>http://localhost:1313/2026/2026-1/</link>

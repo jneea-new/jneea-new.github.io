@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>2026 on Journal of Nonlinear Evolution Equations and Applications</title>
+		<link>http://localhost:1313/2026/</link>
+		<description>Recent content in 2026 on Journal of Nonlinear Evolution Equations and Applications</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/2026/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The dynamics of Helicobacter pylori-associated stomach cancer under Ψ–Hilfer fractional derivative</title>
+				<link>http://localhost:1313/2026/2026-1/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/2026/2026-1/</guid>
+				<description>&lt;p&gt;Helicobacter pylori (HP) is an infection that affects approximately 50% of the&#xA;world’s population and is one of the main pathogenic risk factors for stomach cancer.&#xA;Therefore, a rapid, non-invasive diagnostic approach is necessary to avert gastritis, peptic&#xA;ulcer, and ultimately, stomach cancer associated with HP. HP accounts for the majority of the&#xA;etiological burden associated with gastric cancer; however, the majority of in vivo studies&#xA;have failed to adequately induce malignancy through HP infection alone with HP infection alone.&#xA;This paper creates a new fractional-order differential equations (FODEs) model of HP-induced&#xA;stomach cancer using the Ψ-Hilfer fractional  derivative. FODEs support real-world population&#xA;dynamics so this model propagates a FODE approach to HP-induced stomach cancer relative to&#xA;treatment of HP infection as transmission dynamics support direct and indirect transmission&#xA;with exclusion and inclusion approaches -  successful treatment works as a control (removal)&#xA;factor. This model involves six populations - susceptibles, exposed, infected, treated, stomach&#xA;cancer patients, and and environmental bacterial concentration. The model’s unique solution is&#xA;established, and the properties of positivity and boundedness are verified. Local and global&#xA;stability assessed for equilibrium point where coexistence is observed. The&#xA;Adams-Bashforth-Moulton method (Predictor-Corrector scheme) is applied  for numerical&#xA;simulations to assess fractional dynamics and population behavior relative to parameters of&#xA;interest. This study shows that by increasing the treatment rate of HP infection, the incidence&#xA;rate of HP infection and stomach cancer significantly drop; thus, effective treatment&#xA;alongside reduction in the contact rate is essential for population-induced elimination of&#xA;stomach cancer.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

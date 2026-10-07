@@ -1,10 +1,15 @@
 {{ define "main" }}
+{{ if or .Params.volume .Params.author .Params.authors }}
 <article class="paper-page">
 
-  {{/* Citation Header Line */}}
+{{ $pub := .Params.published_on | default .Params.published_date }}
+{{ if .Params.published }}
+{{ $pub = .Params.published | time.Format "January 2, 2006" }}{{ end }}
   <h3 class="citation-header">
-    <em>J. Nonl. Evol. Equ. Appl.</em> {{ .Params.volume }} ({{ .Params.number | default .Params.issue }}), pp. {{ .Params.pages }}{{ with .Params.published }}, published on {{ . }}{{ end }}:
+    <em>J. Nonl. Evol. Equ. Appl.</em> <b>{{ .Params.volume }}</b> ({{ .Params.number | default .Params.issue }}), pp.&nbsp;{{ .Params.pages }}{{ with $pub }}, published on {{ . }}{{ end }}::
   </h3>
+
+
 
   {{/* Title */}}
   <h1 class="paper-title">{{ .Title }}</h1>
@@ -115,6 +120,12 @@
       </p>
     </div>
   {{ end }}
-
-</article>
+{{ else }}
+  <article class="standard-page">
+    <h1>{{ .Title }}</h1>
+    <div class="page-body">
+      {{ .Content }}
+    </div>
+{{ end }}
+  </article>
 {{ end }}

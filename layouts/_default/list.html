@@ -4,7 +4,7 @@
 	<h2>
     {{ if .IsHome }}
       Welcome to the {{ site.Title }}!
-    {{ elif $isVol }}
+    {{ else if $isVol }}
       {{ site.Title }}, Volume {{ .Params.volume | default .Title }}
     {{ else }}
       {{ .Params.subtitle }}

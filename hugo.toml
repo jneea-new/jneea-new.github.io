@@ -1,10 +1,17 @@
 # Hugo config file
+
 #baseURL = 'https://jneea.com/'
-# until our domain jneea.com is "connected" to github. 
+# until our domain jneea.com is "connected" to github:
 baseURL = 'https://jneea-new.github.io/'
+
 title = 'Journal of Nonlinear Evolution Equations and Applications'
 
 languageCode = 'en-us'
+
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[permalinks.page]
+  2026 = "/:filename/"
 
 [params]
   description = '''

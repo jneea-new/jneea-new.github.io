@@ -3,3 +3,5 @@ _site
 public/
 resources/
 .hugo_build.lock
+# MFH 7.10.26: ignore jmacs backup files
+*~

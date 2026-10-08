@@ -1,13 +1,15 @@
-{{ define "main" }}
+{{ define "main" }}{{ $isVol := findRE `^\d{4}$` .Section }}{{/* also used for /accepted/ */}}
 <div class="volume-index">
+  <h1>{{ partial "pagetitle.html" . }}</h1>
 	<h2>
     {{ if .IsHome }}
-      Welcome to the Journal of Nonlinear Evolution Equations and Applications!
+      Welcome to the {{ site.Title }}!
+    {{ elif $isVol }}
+      {{ site.Title }}, Volume {{ .Params.volume | default .Title }}
     {{ else }}
-      Journal of Nonlinear Evolution Equations and Applications, Volume {{ .Params.volume | default .Title }}
+      {{ .Params.subtitle }}
     {{ end }}
   </h2>
-
   {{ with .Content }}
     <div class="volume-intro">{{ . }}</div>
   {{ end }}
@@ -31,7 +33,7 @@
 
         {{/* Title, Citation, and Abstract Link */}}
         <a href="{{ .RelPermalink }}" class="toc-abstract-link">
-          <span class="toc-paper-title">{{ .Title }}</span> :
+          <span class="toc-paper-title">{{ .Title }}</span>:
           <span class="toc-citation">
             <em>J. Nonl. Evol. Equ. Appl.</em> {{ .Params.volume }} ({{ .Params.number | default .Params.issue }}) ({{ .Params.published_year | default .Params.volume }}) pp. {{ .Params.pages }}:
           </span>

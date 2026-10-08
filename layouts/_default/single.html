@@ -9,17 +9,13 @@
     <em>J. Nonl. Evol. Equ. Appl.</em> <b>{{ .Params.volume }}</b> ({{ .Params.number | default .Params.issue }}), pp.&nbsp;{{ .Params.pages }}{{ with $pub }}, published on {{ . }}{{ end }}::
   </h3>
 
+  <h2 class="paper-title">{{ .Title }}</h2>
 
-
-  {{/* Title */}}
-  <h1 class="paper-title">{{ .Title }}</h1>
-
-  {{/* Authors & Affiliations */}}
   {{ $authors := .Params.author | default .Params.authors }}
-  {{ $addresses := .Params.address | default .Params.addresses | default .Params.affiliation | default .Params.affiliations }}
+  {{ $address := .Params.address | default .Params.addresses | default .Params.affiliation | default .Params.affiliations }}
 
   <div class="paper-authors-block">
-    <h2 class="author-names-line">
+    <h3 class="author-names-line">
       {{ if reflect.IsSlice $authors }}
         {{ range $index, $item := $authors }}
           {{ if $index }} and {{ end }}
@@ -36,11 +32,11 @@
         {{ $authorList := split $authors " and " }}
         {{ delimit $authorList ", " " and " }}
       {{ end }}
-    </h2>
+    </h3>
 
     {{ if $addresses }}
       <div class="affiliations-block">
-        {{ range $id, $addr := $addresses }}
+        {{ range $id, $addr := $address }}
           <p class="affiliation-line"><sup>{{ $id }}</sup> {{ $addr }}</p>
         {{ end }}
       </div>

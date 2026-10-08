@@ -25,6 +25,16 @@
         top: 130px;
         left: 16px;
       }
+      
       footer { font-size: small; text-align: center; margin-top: 40px; padding: 20px 0; }
       .layout{ display:flex; gap:2rem }
       main { margin-left: 16em; }
+nav ul {
+  margin: 0;
+  padding-left: 1.1em;   /* top level: room for the bullet */
+}
+nav ul ul {
+  padding-left: 1em;     /* nested bullet lands under the parent's first letter */
+}
+nav li { margin: 0.15em 0; }
+nav li.active > a { font-weight: bold; }

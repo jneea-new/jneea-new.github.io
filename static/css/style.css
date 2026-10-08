@@ -26,4 +26,5 @@
         left: 16px;
       }
       footer { font-size: small; text-align: center; margin-top: 40px; padding: 20px 0; }
-.layout{ display:flex; gap:2rem }
+      .layout{ display:flex; gap:2rem }
+      main { margin-left: 16em; }
